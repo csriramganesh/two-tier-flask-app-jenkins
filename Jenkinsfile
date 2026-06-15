@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git url: 'https://github.com/csriramganesh/two-tier-flask-app-jenkins' , branch: 'main'
+                git url: 'https://github.com/csriramganesh/two-tier-flask-app-jenkins' , branch: 'master'
             }
         }
 
