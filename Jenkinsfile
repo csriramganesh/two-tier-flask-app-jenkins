@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/YOUR_USERNAME/YOUR_REPO.git'
+                git url: 'https://github.com/csriramganesh/two-tier-flask-app-jenkins' , branch: 'main'
             }
         }
 
@@ -28,9 +28,9 @@ pipeline {
                     sh '''
                     echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
 
-                    docker tag two-tier-flask-app:latest DOCKER_USERNAME/two-tier-flask-app:latest
+                    docker tag two-tier-flask-app:latest DOCKER_USER/two-tier-flask-app:latest
 
-                    docker push DOCKER_USERNAME/two-tier-flask-app:latest
+                    docker push DOCKER_USER/two-tier-flask-app:latest
                     '''
                 }
             }
