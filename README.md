@@ -49,8 +49,7 @@ Pipeline Code:
 ```groovy
 stage('Clone Code') {
     steps {
-        git branch: 'main',
-            url: 'https://github.com/your-repository.git'
+        git url: 'https://github.com/your-repository.git' , branch: 'main'
     }
 }
 ```
